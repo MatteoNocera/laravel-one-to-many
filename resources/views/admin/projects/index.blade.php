@@ -33,6 +33,7 @@
                             <th scope="col">Id</th>
                             <th scope="col">Image</th>
                             <th scope="col">Title</th>
+                            <th scope="col">Type</th>
                             <th scope="col">Links</th>
                             <th scope="col" class="text-center">Actions</th>
                         </tr>
@@ -60,7 +61,13 @@
                                         N/A
                                     @endif --}}
                                 </td>
+
                                 <td class="col-4 text-center align-middle">{{ $project->title }}</td>
+
+                                <td class="col-2 text-center align-middle">
+                                    {{ $project->type ? $project->type->name : 'None' }}
+                                </td>
+
                                 <td class="col-2 align-middle">
                                     <a class="btn btn-outline-dark m-1"
                                         href="https://github.com/MatteoNocera?tab=repositories" target="_blank"

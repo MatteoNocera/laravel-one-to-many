@@ -37,6 +37,24 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="type_id" class="form-label">Types</label>
+                            <select class="form-select" name="type_id" id="type_id">
+                                <option selected disabled>Select a type</option>
+                                <option value="">None</option>
+
+                                @forelse ($types as $type)
+                                    <option value="{{ $type->id }}" {{ $type->id == old('type_id') ? 'selected' : '' }}>
+                                        {{ $type->name }}</option>
+                                @empty
+                                @endforelse
+
+                            </select>
+                        </div>
+                        @error('type_id')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
+                        <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
                             <input type="text" class="form-control" @error('description') is-invalid @enderror
                                 name="description" id="description" aria-describedby="help_description"

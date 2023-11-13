@@ -42,6 +42,9 @@
                                 <p class="card-text fs-5 py-4"><span class="text-white-50">Description:
                                     </span>{{ $project->description }}</p>
 
+                                <p class="card-text fs-5 py-4 text-white-50">Type: <span class="badge bg-secondary p-2">
+                                        {{ $project->type ? $project->type->name : 'None' }}
+                                    </span></p>
                             </div>
                         </div>
                     </div>
